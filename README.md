@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/tos-kamiya/nemoc.png)](http://travis-ci.org/tos-kamiya/nemoc)
+
 # nomoc, a command-line rendering tool for NEMO template
 
 A CLI tool to render nemo template (experimental).
