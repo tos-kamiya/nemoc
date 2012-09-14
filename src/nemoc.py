@@ -23,7 +23,7 @@ def render(s, params={}):
     
     >>> render('%img src="images/mrfoobar.jpg" alt="Mr. FooBar"')
     u'\n<img src="images/mrfoobar.jpg" alt="Mr. FooBar" />'
-"""
+    """
 
     nemo = NemoParser(debug=False).parse
     return Template(s, preprocessor=nemo).render_unicode(**params)
@@ -80,18 +80,20 @@ def main():
         src_text = sys.stdin.read()
     else:
         with open(src, "rb") as f:
-            src_text = f.read().decode('utf-8')
+            src_text = f.read()
+    src_text = src_text.decode('utf-8')
 
     rendered = render(src_text, params)
 
     rendered = rendered[1:] if rendered.startswith('\n') else rendered  # just a little bit walkaround (this is a mako's spec?)
     rendered = rendered + '\n' if not rendered.endswith('\n') else rendered  # same as the above
 
+    rendered = rendered.encode('utf-8')
     if dest is None:
         sys.stdout.write(rendered)
     else:
         with open(dest, "wb") as f:
-            f.write(rendered.encode('utf-8'))
+            f.write(rendered)
 
 
 if __name__ == '__main__':
