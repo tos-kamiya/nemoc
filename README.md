@@ -1,8 +1,6 @@
-# nemoc
-
 # nomoc, a command-line rendering tool for NEMO template
 
-A CLI tool to render nemo template.
+A CLI tool to render nemo template (experimental).
 
 # dependencies
 
