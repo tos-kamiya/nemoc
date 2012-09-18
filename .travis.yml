@@ -14,4 +14,6 @@ python:
 script: 
   - test src/tests/unittest_commandline.py
   - test src/tests/unittest_pydoc.py
-  - test src/unittest_rendering.py
+  - test src/tests/unittest_rendering.py
+  - test src/tests/unittest_rendering_unicode.py
+
